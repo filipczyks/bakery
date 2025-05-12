@@ -3,6 +3,7 @@ com/somi/bakery/domain/OrderItem.class
 com/somi/bakery/service/OrderService$OrderLine.class
 com/somi/bakery/dto/OrderRequest.class
 com/somi/bakery/domain/Order.class
+com/somi/bakery/config/JacksonConfig.class
 com/somi/bakery/BakeryApplication.class
 com/somi/bakery/controller/OrderController.class
 com/somi/bakery/config/WebDebugConfig.class

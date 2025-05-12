@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_BASE_URL } from "../config";
 
 export default function OrderForm() {
   const [clientName, setClientName] = useState("");
@@ -9,7 +10,7 @@ export default function OrderForm() {
     e.preventDefault();
     setMessage(null);
     try {
-      const res = await fetch("http://localhost:8080/orders", {
+      const res = await fetch(`${API_BASE_URL}/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ clientName, orderText }),

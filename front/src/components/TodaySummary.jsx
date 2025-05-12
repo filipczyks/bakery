@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../config";
 
 export default function TodaySummary() {
   const [summary, setSummary] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/orders/today")
+    fetch(`${API_BASE_URL}/orders/today`)
       .then(res => res.json())
       .then(data => setSummary(data))
       .finally(() => setLoading(false));
