@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
+import { Group, Anchor, Paper } from '@mantine/core';
 
 export default function Navigation() {
   return (
-    <nav style={{ marginBottom: 20 }}>
-      <Link to="/" style={{ marginRight: 10 }}>Nowe zamówienie</Link>
-      <Link to="/summary" style={{ marginRight: 10 }}>Podsumowanie dnia</Link>
-      <Link to="/history">Historia zamówień</Link>
-    </nav>
+    <Paper shadow="sm" p="md" mb="xl">
+      <Group>
+        <Anchor component={Link} to="/">Nowe zamówienie</Anchor>
+        <Anchor component={Link} to="/summary">Podsumowanie dnia</Anchor>
+        <Anchor component={Link} to="/history">Historia zamówień</Anchor>
+      </Group>
+    </Paper>
   );
 } 

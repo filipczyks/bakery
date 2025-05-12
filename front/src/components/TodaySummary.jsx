@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { API_BASE_URL } from "../config";
+import { Title, Table, Paper, Loader, Center, Stack, Container, Text } from '@mantine/core';
 
 export default function TodaySummary() {
   const [summary, setSummary] = useState([]);
@@ -13,28 +14,41 @@ export default function TodaySummary() {
   }, []);
 
   return (
-    <div>
-      <h2>Podsumowanie dzisiejszych zamówień</h2>
-      {loading ? (
-        <div>Ładowanie...</div>
-      ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Produkt</th>
-              <th>Ilość</th>
-            </tr>
-          </thead>
-          <tbody>
-            {summary.map(item => (
-              <tr key={item.name}>
-                <td>{item.name}</td>
-                <td>{item.qty}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
+    <Container size="md">
+      <Paper shadow="sm" p="xl" radius="md" withBorder>
+        <Stack>
+          <Title order={2} ta="center" mb="xl">Podsumowanie dzisiejszych zamówień</Title>
+          
+          {loading ? (
+            <Center>
+              <Loader size="lg" />
+            </Center>
+          ) : (
+            <>
+              {summary.length === 0 ? (
+                <Text c="dimmed" ta="center" size="lg">Brak zamówień na dziś.</Text>
+              ) : (
+                <Table striped highlightOnHover>
+                  <Table.Thead>
+                    <Table.Tr>
+                      <Table.Th>Produkt</Table.Th>
+                      <Table.Th ta="right">Ilość</Table.Th>
+                    </Table.Tr>
+                  </Table.Thead>
+                  <Table.Tbody>
+                    {summary.map(item => (
+                      <Table.Tr key={item.name}>
+                        <Table.Td>{item.name}</Table.Td>
+                        <Table.Td ta="right">{item.qty}</Table.Td>
+                      </Table.Tr>
+                    ))}
+                  </Table.Tbody>
+                </Table>
+              )}
+            </>
+          )}
+        </Stack>
+      </Paper>
+    </Container>
   );
 } 
