@@ -1,0 +1,12 @@
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/BakeryApplication.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/config/WebDebugConfig.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/controller/OrderController.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/domain/Order.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/domain/OrderItem.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/domain/Product.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/dto/OrderHistoryDto.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/dto/OrderRequest.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/dto/ProductSummary.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/repository/OrderRepository.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/repository/ProductRepository.java
+/Users/somi/bakery/bakery/src/main/java/com/somi/bakery/service/OrderService.java
