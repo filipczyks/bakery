@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { API_BASE_URL } from "../config";
+import { API_URL } from "../config";
 import { Paper, Title, Text, Stack, Card, Group, List, Loader, Center, Container } from '@mantine/core';
 
 const formatDate = (dateString) => {
@@ -21,7 +21,7 @@ export default function OrderHistory() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/orders/history`)
+    fetch(`${API_URL}/orders/history`)
       .then(res => res.json())
       .then(data => setOrders(data))
       .finally(() => setLoading(false));

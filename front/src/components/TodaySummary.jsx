@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { API_BASE_URL } from "../config";
+import { API_URL } from "../config";
 import { Title, Table, Paper, Loader, Center, Stack, Container, Text } from '@mantine/core';
 
 export default function TodaySummary() {
@@ -7,7 +7,7 @@ export default function TodaySummary() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/orders/today`)
+    fetch(`${API_URL}/orders/today`)
       .then(res => res.json())
       .then(data => setSummary(data))
       .finally(() => setLoading(false));

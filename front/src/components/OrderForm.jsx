@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { API_BASE_URL } from "../config";
+import { API_URL } from "../config";
 import { TextInput, Textarea, Button, Paper, Title, Stack, Alert } from '@mantine/core';
 import { IconAlertCircle } from '@tabler/icons-react';
 
@@ -12,7 +12,7 @@ export default function OrderForm() {
     e.preventDefault();
     setMessage(null);
     try {
-      const res = await fetch(`${API_BASE_URL}/orders`, {
+      const res = await fetch(`${API_URL}/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ clientName, orderText }),
